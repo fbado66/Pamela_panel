@@ -1,0 +1,8 @@
+<h1>Cohortinstructors#index</h1>
+<p>Find me in app/views/cohortinstructors/index.html.erb</p>
+
+<% @cohortinstructors.each do |cohortinstructors| %>
+Cohort: <%= cohortinstructors.cohort_id %><br />
+Instructor: <%= cohortinstructors.instructor_id %><br />
+Created_at: <%= cohortinstructors.created_at %><br />
+<% end %>

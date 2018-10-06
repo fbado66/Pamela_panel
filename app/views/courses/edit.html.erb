@@ -1,0 +1,9 @@
+<h1>Courses#edit</h1>
+<p>Find me in app/views/courses/edit.html.erb</p>
+
+<%= form_with(model: @course) do |form| %>
+  Name: <%= form.text_field(:name) %><br />
+  Total of Hours: <%= form.text_field(:total_of_hrs) %><br />
+  Description: <%= form.text_field(:description) %><br />
+  <%= form.submit %>
+<% end %>

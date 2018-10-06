@@ -1,0 +1,8 @@
+
+
+<%= form_with(model: @cohortinstructor) do |form| %>
+  Cohort: <%= form.select :cohort_id, options_for_select(@cohort, @cohortinstructor.cohort_id) %><br />
+  Instructor: <%= form.select :instructor_id, options_for_select(@instructor, @cohortinstructor.instructor_id) %><br />
+<%= form.submit %>
+<% end %>
+

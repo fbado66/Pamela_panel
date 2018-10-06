@@ -1,0 +1,13 @@
+
+<%= form_with(model: @cohorts_student) do |form| %>
+ <!-- Created_at: <%= form.text_field(:created_at) %><br /> -->
+  Cohort: <%= form.select :cohort_id, options_for_select(@cohort, @cohorts_student.cohort_id) %><br />
+  <!--Student: <%= form.select :student_id, options_for_select(@student, @cohorts_student.student_id) %><br />
+  Student: <%= form.select :student_id, options_for_select(@student, @cohorts_student.student_id) %><br /> -->
+
+  Students: <%= form.select :student_id, options_for_select(@student, @cohorts_student.student_id) ,{ :prompt => "Please select"},{ :multiple => true, :size => 5 }%><br /> 
+
+
+<%= form.submit %>
+<% end %>
+

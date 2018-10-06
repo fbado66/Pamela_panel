@@ -1,0 +1,12 @@
+<h1>Cohorts#edit</h1>
+<p>Find me in app/views/cohorts/edit.html.erb</p>
+
+<%= form_with(model: @cohort) do |form| %>
+  Name: <%= form.text_field(:name) %><br />
+  Start On: <%= form.text_field(:start_on) %><br />
+  End On: <%= form.text_field(:end_on) %><br />
+  Instructor: <%= form.select :instructor_id, options_for_select(@instructors, @cohort.instructor_id) %><br />
+  Course: <%= form.select :course_id, options_for_select(@courses, @cohort.course_id) %><br />
+  Student: <%= form.select :student_id, options_for_select(@students, @cohort.student_id) %><br />
+<%= form.submit %>
+<% end %>

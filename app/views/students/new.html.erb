@@ -1,0 +1,14 @@
+<h1>Students#new</h1>
+<p>Find me in app/views/students/new.html.erb</p>
+
+<!-- students_path == /students  -->
+<%= form_with(model: @student) do |form| %>
+  First Name: <%= form.text_field(:first_name) %><br />
+  Last Name: <%= form.text_field(:last_name) %><br />
+  Age: <%= form.text_field(:age) %><br />
+  Education:<%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br />
+  Email: <%= form.text_field(:email) %><br />
+  Cohort: <%= form.select :cohort_id, options_for_select(@cohorts, @student.id) %><br />
+
+<%= form.submit %>
+<% end %>
