@@ -7,5 +7,6 @@ class Instructor < ApplicationRecord
                         greater_than: 0,
                                         message: "150 is the limit" }
   
-  # belongs_to :cohorts
+  # belongs_to :cohort
+ 
 end 

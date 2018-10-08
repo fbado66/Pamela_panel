@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   def index
     @students = Student.order(:id).all
   end
@@ -34,7 +35,8 @@ class StudentsController < ApplicationController
       last_name: params[:student][:last_name],
       age: params[:student][:age],
       education: params[:student][:education],
-      email: params[:student][:email]
+      email: params[:student][:email],
+
 
     )
 
@@ -68,6 +70,13 @@ class StudentsController < ApplicationController
     @cohorts = Cohort.all.map{ |c| [c.id] }
 
   end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, :age, :education, :email)
+  end
+
 
 end
 

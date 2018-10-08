@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'admins/index'
-  get 'admins/show'
-  get 'admins/edit'
-  get 'admins/delete'
-  get 'admins/create'
-  get 'admins/update'
+
+
+  devise_for :admins
+  # sets the landing page controller and route
+
+
+root to: 'students#index'
+ 
   get 'cohortinstructors/index'
   get 'cohortinstructors/show'
   get 'cohortinstructors/edit'
