@@ -3,23 +3,25 @@
       <h1>Cohorts#new</h1>
          <p>Find me in app/views/cohorts/new.html.erb</p>
    </div>
-
+<div class="col-6 offset-md-3">
  <div class="jumbotron">
-   <div class="col-md-6"> 
+   <div class="col-md-3"> 
     <div class="form-group">
     <%= form_with(model: @cohort) do |form| %>
      Name: <%= form.text_field(:name) %> <br /><br />
-     Start On: <%= form.text_field(:start_on) %><br /><br />
-     End On: <%= form.text_field(:end_on) %><br /><br />
-     Instructor: <%= form.select :instructor_id, options_for_select(@instructors, @cohort.instructor_id) %><br />
-     Course: <%= form.select :course_id, options_for_select(@courses, @cohort.course_id) %><br />
-     Student: <%= form.select :student_id, options_for_select(@students, @cohort.student_id) %><br />
+     <div> Start On: </div>
+     <%= form.date_field(:start_on) %><br /><br />
+     End On: <%= form.date_field(:end_on) %><br /><br />
+     Instructor: <%= form.select :instructor_id, options_for_select(@instructors, @cohort.instructor_id) %><br /><br />
+     Course: <%= form.select :course_id, options_for_select(@courses, @cohort.course_id) %><br /><br />
+     <div> Student: </div>
+     <%= form.select :student_id, options_for_select(@students, @cohort.student_id) %><br /><br />
 <%= form.submit :class => "btn-primary btn" %> 
      <% end %>
     </div>
 </div>
 </div>
-
+</div>
 </div>
 
 

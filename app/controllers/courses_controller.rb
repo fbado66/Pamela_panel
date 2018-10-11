@@ -25,6 +25,8 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    # redirect_to courses_path
+  
   end
 
   def update
@@ -34,10 +36,10 @@ class CoursesController < ApplicationController
       total_of_hrs: params[:course][:total_of_hrs],
       description: params[:course][:description]
     )
-    redirect_to course_path(course)
+    redirect_to courses_path
   end
 
-   def delete
+   def destroy
      course = Course.find(params[:id])
      course.destroy 
      redirect_to courses_path

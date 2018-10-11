@@ -11,7 +11,7 @@ def edit
     @coursecohort = Coursecohort.find(params[:id])
 end
 
-def delete
+def destroy
     coursecohort = Coursecohort.find(params[:id])
     coursecohort.destroy 
      redirect_to coursecohorts_path

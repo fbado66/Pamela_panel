@@ -21,14 +21,15 @@
              </div>
              <div class="field">
               <label>Total of Hours</label>
-                <%= form.text_field :total_of_hrs, placeholder: "hrs:mns" %>
+                <%= form.time_field :total_of_hrs, placeholder: "hrs:mns" %>
              </div>
              <div class="field">
                <label>Description</label>
                <%= form.text_field :description, placeholder: "What is the course about" %>
             </div>
             <br/>
-            <%= form.submit class: "ui submit button"%>
+
+            <%= form.submit%>
           <% end %>
          </div>
        </div>

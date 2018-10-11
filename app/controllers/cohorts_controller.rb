@@ -5,6 +5,7 @@ class CohortsController < ApplicationController
 
   def show
     @cohort = Cohort.find(params[:id])
+
   end
 
   def new
@@ -47,7 +48,7 @@ class CohortsController < ApplicationController
     redirect_to cohort_path(cohort)
   end
 
-  def delete
+  def destroy
      cohort = Cohort.find(params[:id])
      cohort.destroy 
      redirect_to cohorts_path

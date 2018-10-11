@@ -1,60 +1,50 @@
-<!--
-<div >
-Name: <%= cohort.name %><br />
-Start on: <%= cohort.start_on %><br />
-End on: <%= cohort.end_on %><br />
-Instructor: <%= cohort.instructor_id %><br />
-Course: <%= cohort.course_id %><br />
-Student: <%= cohort.student_id %><br />
-</div> 
--->
 
 
 <div class="container">
   <div class="row"> 
-  <div class="col-md-6 col-md-offset-6"> 
+  <div class="col-md-6 col-md-offset-3"> 
     <table class="table table-bordered table-striped table-hover">
-    <thead>
-    <tr>
-    <td colspan='4'>Cohorts </td>
+     <tbody>
+    <tr> 
+      <div class="col-3">
+       <th> Cohort </td>
+      </div>
+      <div class="col-3">
+       <th><%= cohort.name %></td>
+      </div>
     </tr>
-    </thead>
-
-    <tbody>
-      <tr> 
-        <th class="col-md-2"></td> 
-       
-        <th class="col-md-8"><%= cohort.name %></td>
-
-      </tr>
-
-      <tr>
-       <td>Start on:</td>
-       <td><%= cohort.start_on %></td>
-      </tr>
-
-      <tr>
-        <td>End on:</td>
-        <td><%= cohort.end_on %></td>
-      </tr>
-
-      <tr>
-       <td>Instructor:</td>
-       <td><%= cohort.instructor_id %></td>
-      </tr>
-
-      <tr>
-       <td>Course:</td>
-       <td><%= cohort.course_id %></td>
-      </tr>
-
-      <tr>
-       <td>Student:</td>
-       <td><%= cohort.student_id %></td>
-      </tr>
-    </tbody>
+    <tr>
+      <td>Start on:</td>
+      <td><%= cohort.start_on %></td>
+    </tr>
+    <tr>
+      <td>End on:</td>
+      <td><%= cohort.end_on %></td>
+    </tr>
+    <tr>
+      <td>Instructor:</td>
+      <td><%= cohort.instructor_id %></td>
+    </tr>
+    <tr>
+      <td>Course:</td>
+      <td><%= cohort.course_id %></td>
+    </tr>
+    <tr>
+      <td>Student:</td>
+      
+      <td><%= cohort.student_id%></td>
+    </tr>
+  </tbody>
   </table>
+  
+   <%= link_to 'Edit', edit_cohort_path(cohort), class: "btn btn-success" %> |
+      <%= link_to 'Delete', cohort_path(cohort), class: "btn btn-danger", data: {
+      confirm: "Are you sure want to delete: #{cohort.name}?",}, method: :delete %> 
+
+
   </div>
  </div>
 </div>
+
+
 <br>

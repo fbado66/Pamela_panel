@@ -1,9 +1,18 @@
 <h1>Courses#edit</h1>
 <p>Find me in app/views/courses/edit.html.erb</p>
 
+<div class="container">
+<div class="col-5 offset-md-3">
+<div class="jumbotron">
 <%= form_with(model: @course) do |form| %>
-  Name: <%= form.text_field(:name) %><br />
-  Total of Hours: <%= form.text_field(:total_of_hrs) %><br />
-  Description: <%= form.text_field(:description) %><br />
-  <%= form.submit %>
+  <div>Name:</div> 
+   <%= form.text_field(:name) %><br /><br/>
+  <div>Total of Hours:</div>
+   <%= form.time_field(:total_of_hrs) %><br /><br/>
+  <div>Description:</div>
+   <%= form.text_field(:description) %><br /><br/>
+  <%= form.submit class: "btn btn-success" %>
 <% end %>
+</div>
+</div>
+</div>

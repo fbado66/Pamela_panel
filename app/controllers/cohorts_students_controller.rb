@@ -9,9 +9,11 @@ class CohortsStudentsController < ApplicationController
 
   def edit
     @cohorts_student = CohortsStudent.find(params[:id])
+    @cohort = Cohort.all.map{ |c| [c.id] }
+
   end
 
-  def delete
+  def destroy
      cohorts_student = CohortsStudent.find(params[:id])
      cohorts_student.destroy 
      redirect_to cohorts_students_path

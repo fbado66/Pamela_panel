@@ -1,0 +1,212 @@
+<div id="homes-index">
+
+<h1>Homes#index</h1>
+<p>Find me in app/views/homes/index.html.erb</p>
+
+
+<p> Welcome Admin </p>
+<div class="frame"></div>
+
+Total of Students: <%= Student.all.count %> <br/>
+Total of Cohorts: <%= Cohort.all.count %> <br/>
+Total of Courses: <%= Course.all.count %> <br/>
+Total of Instructors: <%= Instructor.all.count %> <br/><br/>
+
+<div class="col-5">
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Tasks: </th>
+      <th scope="col">Reminder: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Something here </td>
+       <th>Some reminder here </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+      
+<br /><br />
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+<div class="col-12">
+<table class="table table-sm table-bordered">
+  <thead>
+  <td colspan="3"><h3>  STUDENTS  <%= link_to 'New Student', new_student_path, class: "btn btn-primary" %></h3>
+ </h1></td>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @students.each do |student| %>
+      <th scope="row"><%= student.id %></th>
+      <td><%= student.first_name %></td>
+      <td><%= student.last_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+<div class="col">
+<div class="col-12">
+<table class="table table-sm table-bordered">
+  <thead>
+  <td colspan="3"><h3>  INSTRUCTORS  <%= link_to 'New Instructor', new_instructor_path, class: "btn btn-primary" %></h3>
+ </h1></td>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @instructors.each do |instructor| %>
+      <th scope="row"><%= instructor.id %></th>
+      <td><%= instructor.first_name %></td>
+      <td><%= instructor.last_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<br/><br/><br />
+<div class="container">
+  <div class="row">
+    <div class="col">
+<div class="col-12">
+<table class="table table-sm table-bordered">
+  <thead>
+
+  <td colspan="3"><h3>  COURSES  <%= link_to 'New Courses', new_course_path, class: "btn btn-primary" %></h3>
+ </h1></td>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @courses.each do |course| %>
+      <th scope="row"><%= course.id %></th>
+      <td><%= course.name %></td>
+      <td><%= course.description %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+<div class="col">
+<div class="col-12">
+<table class="table table-sm table-bordered">
+  <thead>
+  <td colspan="4"><h3>  COHORTS  <%= link_to 'New Cohort', new_cohort_path, class: "btn btn-primary" %></h3>
+ </h1></td>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Start on</th>
+      <th scope="col">Ends on</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @cohorts.each do |cohort| %>
+      <th scope="row"><%= cohort.id %></th>
+      <td><%= cohort.name %></td>
+      <td><%= cohort.start_on %></td>
+      <td><%= cohort.end_on %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<br />
+
+
+<div class="col">
+<div class="col-12">
+<table class="table table-sm table-bordered">
+  <thead>
+  <td colspan="4"><h3>  COHORTS-STUDENTS  <%= link_to 'New Cohort-Course', new_cohorts_student_path, class: "btn btn-primary" %></h3>
+ </h1></td>
+    <tr>
+   
+      <th scope="col">Cohort_id </th>
+      <th scope="col">students_id</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+  
+  <% @cohorts_student.each do |cohorts_student| %>
+
+    <td><%= link_to cohorts_student.cohort.name, cohorts_student_path(cohorts_student), :class =>'btn btn-primary' %></td>
+    <td><%= cohorts_student.student.first_name %> <%= cohorts_student.student.last_name %></td>
+    </tr>
+    <% end %> 
+  </tbody>
+</table>
+</div>
+</div>
+
+<br /><br />
+
+<div class="col">
+<div class="col-12">
+<table class="table table-sm table-bordered ">
+  <thead>
+  <td colspan="4"><h3>  COHORTS-INSTRUCTORS  <%= link_to 'New Cohort-Instructor', new_cohortinstructor_path, class: "btn btn-primary" %></h3>
+ </h1></td>
+    <tr>
+   
+      <th scope="col">Cohort_id </th>
+      <th scope="col">instructor</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+  
+  <% @cohortinstructors.each do |cohortinstructors| %>
+
+    <td><%= link_to cohortinstructors.cohort.name, cohortinstructor_path(cohortinstructors), :class =>'btn btn-primary' %></td>
+    <td><%= cohortinstructors.instructor.first_name %> <%= cohortinstructors.instructor.last_name %></td>
+    </tr>
+    <% end %> 
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+
+

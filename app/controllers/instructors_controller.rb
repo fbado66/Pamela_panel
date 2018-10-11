@@ -3,20 +3,9 @@ class InstructorsController < ApplicationController
     @instructors = Instructor.all
   end
 
-  def show
-     @instructor = Instructor.find(params[:id])
-  end
-
-  def edit
-    @instructor = Instructor.find(params[:id])
+  def new
+    @instructor = Instructor.new
     @cohorts = Cohort.all.map{ |c| [c.id] }
-
-  end
-
-  def delete
-     instructor = Instructor.find(params[:id])
-     instructor.destroy 
-     redirect_to instructors_path
   end
 
   def create
@@ -27,11 +16,6 @@ class InstructorsController < ApplicationController
       salary: params[:instructor][:salary],
       education: params[:instructor][:education],
       email: params[:instructor][:email]
-
-
-      # cohorts(:cohort, :id, cohort.all, :id, :name)
-
-
     )
     session[:instructor_id] = instructor.id
     redirect_to instructors_path
@@ -46,15 +30,29 @@ class InstructorsController < ApplicationController
       salary: params[:instructor][:salary],
       education: params[:instructor][:education],
       email: params[:instructor][:email]
-
     )
+  
     redirect_to instructor_path(instructor)
   end
 
-  def new
-    @instructor = Instructor.new
+  def show
+     @instructor = Instructor.find(params[:id])
+  end
+
+  def edit
+    @instructor = Instructor.find(params[:id])
     @cohorts = Cohort.all.map{ |c| [c.id] }
 
+  end
+
+  def destroy
+    @instructor = Instructor.find(params[:id])
+    @instructor.destroy
+
+      respond_to do |format|
+        format.html 
+        format.js
+      end  
   end
 
 end

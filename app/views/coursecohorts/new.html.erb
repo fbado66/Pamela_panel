@@ -2,8 +2,9 @@
 
 
 <%= form_with(model: @coursecohort) do |form| %>
-  Cohort: <%= form.select :cohort_id, options_for_select(@cohorts, @coursecohort.cohort_id) %><br />
   Course: <%= form.select :course_id, options_for_select(@courses, @coursecohort.course_id) %><br />
+    Cohort: <%= form.select :cohort_id, options_for_select(@cohorts, @coursecohort.cohort_id) %><br />
+
 <%= form.submit %>
 <% end %>
 

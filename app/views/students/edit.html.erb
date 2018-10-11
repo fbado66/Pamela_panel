@@ -2,12 +2,20 @@
 <p>Find me in app/views/students/edit.html.erb</p>
 
 
+<div class="container">
+<div class="col-5 offset-md-3">
+<div class="jumbotron">
 <%= form_with(model: @student) do |form| %>
-  First Name: <%= form.text_field(:first_name) %><br />
-  Last Name: <%= form.text_field(:last_name) %><br />
-  Age: <%= form.text_field(:age) %><br />
-  Education: <%= form.text_field(:education) %><br />
-  Email: <%= form.text_field(:email) %><br />
-  Cohort: <%= form.select :cohort_id, options_for_select(@cohorts, @student.id) %><br />
-  <%= form.submit %>
+
+  First Name: <%= form.text_field(:first_name) %><br /><br />
+  Last Name: <%= form.text_field(:last_name) %><br /><br />
+  Age: <%= form.text_field(:age) %><br /><br />
+  Education:<%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br /><br />
+  Email: <%= form.text_field(:email) %><br /><br />
+  Cohort: <%= form.select :cohort_id, options_for_select(@cohorts, @student.id) %><br /><br />
+  <%= form.submit class:"btn btn-success" %>
+
 <% end %>
+</div>
+</div>
+</div>

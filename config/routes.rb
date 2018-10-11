@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
 
+  get 'homes/index'
+  get 'homes/show'
+  get 'homes/edit'
+  get 'homes/delete'
+  get 'homes/create'
+  get 'homes/update'
   devise_for :admins
   # sets the landing page controller and route
 
 
-root to: 'students#index'
+root to: 'homes#index'
  
   get 'cohortinstructors/index'
   get 'cohortinstructors/show'
@@ -32,6 +38,8 @@ root to: 'students#index'
   resources :cohorts_students
   resources :coursecohorts
   resources :cohortinstructors
+  resources :homes
+
 
 
 

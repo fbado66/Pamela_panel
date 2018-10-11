@@ -1,5 +1,6 @@
 class Instructor < ApplicationRecord
-  has_many :cohorts
+  has_many :cohortinstructors
+   has_many :cohorts, through: :cohortinstructors, dependent: :destroy
 
     validates :age, numericality: { 
                       less_than: 151, message: "150 is the limit" }

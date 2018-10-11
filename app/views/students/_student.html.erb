@@ -1,12 +1,105 @@
-<div >
-FIrst Name: <%= student.first_name %><br />
-Last Name: <%= student.last_name %><br />
-Age: <%= student.age %><br />
-Education: <%= student.education %><br />
-Email: <%= student.email %><br />
-Created At: <%= student.created_at %><br />
-Updated At: <%= student.updated_at %><br />
-
- 
-
+<!--<div class="title-container">
+<h1>Students</h1>
 </div>
+
+<div class="container">
+  <div class="row"> 
+  <div class="col-md-13 col"> 
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Education</th>
+      <th scope="col">Email</th>      
+      <th scope="col">Registered on</th>
+      <th scope="col">Updated on</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= student.id %></td>
+       <th><%= student.first_name %></td>
+      <td><%= student.last_name %></td>
+      <td> <%= student.age %></td>
+      <td> <%= student.education %></td>
+      <td><%= student.email %></td>
+      <td><%= student.created_at %></td>
+      <td><%= student.updated_at %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div> -->
+
+
+
+
+
+
+<div class="container">
+  <div class="row"> 
+  <div class="col-8 offset-md-2"> 
+    <table class="table table-bordered table-striped table-hover table-dark">
+     <tbody>
+     <tr>
+      <td>Id:</td>
+      <td><%= student.id %></td>
+    </tr>
+    <tr> 
+      <div class="col-3">
+       <th> First Name:</td>
+      </div>
+      <div class="col-3">
+       <th><%= student.first_name %></td>
+      </div>
+    </tr>
+    <tr>
+      <td>Last Name:</td>
+      <td> <%= student.last_name %> </td> 
+
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td> <%= student.age %></td>
+    </tr>
+    <tr>
+      <td>Education:</td>
+      <td> <%= student.education %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= student.email %></td>
+    </tr>
+    <tr>
+      <td>First Register on:</td>
+      <td><%= student.created_at_formatted %></td>
+    </tr>
+    <tr>
+      <td>updated at:</td>
+      <td><%= student.updated_at %></td>
+    </tr>
+   
+  </tbody>
+  </table>
+  
+     <%= link_to 'Edit', edit_student_path(student), class: "btn btn-success" %> 
+      
+      
+
+
+
+   <!-- <%= link_to 'Delete', student_path(student), class: "btn btn-danger", data: {
+      confirm: "Are you sure want to delete: #{student.first_name}?",}, method: :delete %> -->
+
+  </div>
+ </div>
+</div>
+
+  <!--<%= link_to 'DELETE', student_path, remote: true %>-->
+
+
+<br>

@@ -8,13 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
- 
- 
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
   </head>
-
 <body>
    
 <% if notice %>
@@ -24,28 +21,55 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-
-
-<p class="navbar-text pull-right">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
 <% if admin_signed_in? %>
-  Logged in as <strong><%= current_admin.email %></strong>.
-  <%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+  <a class="navbar-brand"  href="<%=homes_path%>">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=students_path%>">Students <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=instructors_path%>">Instructors <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=courses_path%>">Courses <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=cohorts_path%>">Cohorts <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=edit_admin_registration_path%>">Edit Profile <span class="sr-only">(current)</span></a>
+      </li>
+
+    </button>
+       <li class="nav-item nav-link">
+        <%= link_to "Logout", destroy_admin_session_path, method: :delete  %> 
+      
+      </li>
+    </ul>
+  <span class="navbar-text">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"> Logged in as <strong><%= current_admin.email %></strong></li>
+    </ul>
+    </span>
+     </ul>
 <% else %>
-  <%= link_to "Sign up", new_admin_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
+<span class="navbar-text">
+<ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=new_admin_registration_path%>">Sign up <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="<%=new_admin_session_path%>">Login <span class="sr-only">(current)</span></a>
+      </li>
+      </ul>
+      </span>
+    <% end %>
+</nav>
    <%= yield %>
-
-
-
-
-
-
   </body>
-
-
-
- 
 </html>

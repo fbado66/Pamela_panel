@@ -3,7 +3,8 @@
 
 
 <% @coursecohort.each do |coursecohort| %>
-Cohort: <%= coursecohort.cohort_id %><br />
+
 Course <%= coursecohort.course_id %><br />
+Cohort: <%= coursecohort.cohort_id %><br />
 Created_at <%= coursecohort.created_at %><br />
 <% end %>

@@ -11,7 +11,7 @@ def edit
   @cohortinstructor = Cohortinstructor.find(params[:id])
 end
 
-def delete
+def destroy
   cohortinstructor = Cohortinstructor.find(params[:id])
   cohortinstructor.destroy 
      redirect_to cohortinstructors_path
