@@ -1,8 +1,32 @@
 <h1>CohortsStudents#index</h1>
 <p>Find me in app/views/cohorts_students/index.html.erb</p>
 
+
+
+
+
+<div class="container">
+  <div class="row"> 
+  <div class="col-md-14 col"> 
+      <table class="table table-bordered table-striped table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Cohort:</th>
+      <th scope="col">Students:</th>
+      <th scope="col">Created at:</th>
+      
+    </tr>
+  </thead>
 <% @cohorts_student.each do |cohorts_student| %>
-Cohort: <%= cohorts_student.cohort_id %><br />
-Students <%= cohorts_student.student_id %><br />
-Created_at <%= cohorts_student.created_at %><br />
-<% end %>
+    <tbody>
+    <tr>
+      <th><%= cohorts_student.cohort_id %><br />
+      <td><%= cohorts_student.student.last_name %><br />
+      <td><%= cohorts_student.created_at_formatted %><br />
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+</div>
+</div>
+</div>

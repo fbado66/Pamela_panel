@@ -1,22 +1,24 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+
+<br/>
+<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+<p class="text-center" style="text-shadow: 1px 2px">TIME TRAVEL 66K ACADEMY</p>
 
 
+<h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Instructors </h2>
+<br/>
 
 
- <div class="title-container">
-<h1>Instructors</h1>
 
 </div>
 <div class="container">
-     <%= link_to 'New Instructor', new_instructor_path, class: "btn btn-primary btn-lg btn-block" %>
+     <%= link_to 'New Instructor', new_instructor_path, class: "btn btn-success btn-lg btn-block" %>
 </div>
 <br />
 <div class="container">
   <div class="row"> 
   <div class="col-md-14 col"> 
-      <table class="table table-bordered table-striped table-hover table-dark">
-  <thead>
+      <table class="table table-bordered table-striped table-hover table-light">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Id</th>
       <th scope="col">First Name</th>
@@ -45,7 +47,7 @@
       <td><%= instructor.updated_at_formatted %></td>
       <td>  
         <%= link_to(instructor_path(id: instructor.id), method: :delete, remote: true) do %>
-          <span class="glyphicon glyphicon-trash"></span>
+         <p class="text-center"> <span  class="glyphicon glyphicon-trash"></span></p>
         <% end %>
       </td>
     </tr>

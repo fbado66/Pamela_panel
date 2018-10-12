@@ -1,56 +1,87 @@
 <div id="homes-index">
+<div class="hero">
+<div class="container">
+<br/>
+<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+<p class="text-center" style="text-shadow: 1px 2px">TIME TRAVEL 66K ACADEMY</p>
 
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<br />
+<h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Welcome Admin </h2>
+<br/>
+</div>
 
-
-<p> Welcome Admin </p>
-<div class="frame"></div>
-
-Total of Students: <%= Student.all.count %> <br/>
-Total of Cohorts: <%= Cohort.all.count %> <br/>
-Total of Courses: <%= Course.all.count %> <br/>
-Total of Instructors: <%= Instructor.all.count %> <br/><br/>
-
-<div class="col-5">
-<table class="table table-sm table-bordered">
+<div class="col">
+<div class="col-10 offset-md-1">
+<table class="table table-sm table-bordered table-light">
   <thead>
     <tr>
-      <th scope="col">Tasks: </th>
-      <th scope="col">Reminder: </th>
+      <th class="text-center" scope="col">Total Courses</th>
+      <th class="text-center" scope="col">Total Students</th>
+      <th class="text-center" scope="col">Total Instructors</th>
+      <th class="text-center" scope="col">Total Cohorts </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Something here </td>
-       <th>Some reminder here </td>
+    <td class="align-middle text-center"><%= Course.all.count %> </td>
+    <td class="align-middle text-center"><%= Student.all.count %> <br/></td>
+    <td class="align-middle text-center"><%= Instructor.all.count %> <br/></td>
+    <td class="align-middle text-center"><%= Cohort.all.count %> <br/></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<br />
+
+ 
+</div>   
+<div class="frame">
+<div class="col-8 offset-md-2">
+<table class="table table-sm table-bordered table-light">
+  <thead>
+    <tr>
+      <th class="text-center"scope="col">Tasks: </th>
+      <th class="text-center"scope="col">Reminder: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center">Something here </td>
+       <th class="text-center">Some reminder here </td>
       </tr>
   </tbody>
 </table>
 </div>
-      
+   
 <br /><br />
 
 <div class="container">
   <div class="row">
     <div class="col">
 <div class="col-12">
-<table class="table table-sm table-bordered">
-  <thead>
-  <td colspan="3"><h3>  STUDENTS  <%= link_to 'New Student', new_student_path, class: "btn btn-primary" %></h3>
- </h1></td>
+<table class="table table-sm table-bordered table-light">
+  <thead >
+    <ul class="navbar-nav mr-auto">
+ <td class="text-right" colspan="4"><h3>  STUDENTS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+ <%= link_to new_student_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-plus"></i> 
+     <% end %>
+  </ul>
+ </td>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
+      <th class="text-center"scope="col">Id</th>
+      <th class="text-center"scope="col">First Name</th>
+      <th class="text-center"scope="col">Last Name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <% @students.each do |student| %>
-      <th scope="row"><%= student.id %></th>
-      <td><%= student.first_name %></td>
-      <td><%= student.last_name %></td>
+      <th class="text-center"scope="row"><%= student.id %></th>
+      <td class="text-center"><%= student.first_name %></td>
+      <td class="text-center"><%= student.last_name %></td>
     </tr>
     <% end %>
   </tbody>
@@ -63,22 +94,27 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
 
 <div class="col">
 <div class="col-12">
-<table class="table table-sm table-bordered">
+<table class="table table-sm table-bordered table-light">
   <thead>
-  <td colspan="3"><h3>  INSTRUCTORS  <%= link_to 'New Instructor', new_instructor_path, class: "btn btn-primary" %></h3>
+  <td class="text-right" colspan="3"><h3>  INSTRUCTORS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  
+    
+    <%= link_to new_instructor_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-plus"></i> 
+    <% end %>
  </h1></td>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
+      <th class="text-center"scope="col">Id</th>
+      <th class="text-center"scope="col">First Name</th>
+      <th class="text-center"scope="col">Last Name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <% @instructors.each do |instructor| %>
-      <th scope="row"><%= instructor.id %></th>
-      <td><%= instructor.first_name %></td>
-      <td><%= instructor.last_name %></td>
+      <th class="text-center" scope="row"><%= instructor.id %></th>
+      <td class="text-center"><%= instructor.first_name %></td>
+      <td class="text-center"><%= instructor.last_name %></td>
     </tr>
     <% end %>
   </tbody>
@@ -92,23 +128,27 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
   <div class="row">
     <div class="col">
 <div class="col-12">
-<table class="table table-sm table-bordered">
+<table class="table table-sm table-bordered table-light">
   <thead>
 
-  <td colspan="3"><h3>  COURSES  <%= link_to 'New Courses', new_course_path, class: "btn btn-primary" %></h3>
+  <td class="text-right" colspan="3"><h3>  COURSES &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+ <%= link_to new_course_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-plus"></i> 
+    <% end %>
+ 
  </h1></td>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
+      <th class="text-center"scope="col">Id</th>
+      <th class="text-center"scope="col">Name</th>
+      <th class="text-center" scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <% @courses.each do |course| %>
-      <th scope="row"><%= course.id %></th>
-      <td><%= course.name %></td>
-      <td><%= course.description %></td>
+      <th class="text-center" scope="row"><%= course.id %></th>
+      <td class="text-center"><%= course.name %></td>
+      <td class="text-center"><%= course.description %></td>
     </tr>
     <% end %>
   </tbody>
@@ -119,24 +159,28 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
 
 <div class="col">
 <div class="col-12">
-<table class="table table-sm table-bordered">
+<table class="table table-sm table-bordered table-light">
   <thead>
-  <td colspan="4"><h3>  COHORTS  <%= link_to 'New Cohort', new_cohort_path, class: "btn btn-primary" %></h3>
+<td class="text-right" colspan="4"><h3>  COHORTS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+ <%= link_to new_cohort_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-plus"></i> 
+  <% end %>
+ 
  </h1></td>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Start on</th>
-      <th scope="col">Ends on</th>
+      <th class="text-center" scope="col">Id</th>
+      <th class="text-center"scope="col">Name</th>
+      <th class="text-center"scope="col">Start on</th>
+      <th class="text-center"scope="col">Ends on</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <% @cohorts.each do |cohort| %>
-      <th scope="row"><%= cohort.id %></th>
-      <td><%= cohort.name %></td>
-      <td><%= cohort.start_on %></td>
-      <td><%= cohort.end_on %></td>
+      <th class="text-center"scope="row"><%= cohort.id %></th>
+      <td class="text-center"><%= cohort.name %></td>
+      <td class="text-center"><%= cohort.start_on %></td>
+      <td class="text-center"><%= cohort.end_on %></td>
     </tr>
     <% end %>
   </tbody>
@@ -146,17 +190,21 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
 </div>
 <br />
 
-
-<div class="col">
+<div class="container">
+  <div class="row">
+    <div class="col">
 <div class="col-12">
-<table class="table table-sm table-bordered">
+<table class="table table-sm table-bordered table-light">
   <thead>
-  <td colspan="4"><h3>  COHORTS-STUDENTS  <%= link_to 'New Cohort-Course', new_cohorts_student_path, class: "btn btn-primary" %></h3>
+ 
+ <td class="text-right" colspan="4"><h3>  COHRT-STDNT &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+ <%= link_to new_cohorts_student_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-plus"></i> 
+  <% end %>
  </h1></td>
     <tr>
-   
-      <th scope="col">Cohort_id </th>
-      <th scope="col">students_id</th>
+      <th class="text-center" scope="col">Cohort </th>
+      <th class="text-center" scope="col">Students</th>
     </tr>
   </thead>
   <tbody>
@@ -164,8 +212,8 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
   
   <% @cohorts_student.each do |cohorts_student| %>
 
-    <td><%= link_to cohorts_student.cohort.name, cohorts_student_path(cohorts_student), :class =>'btn btn-primary' %></td>
-    <td><%= cohorts_student.student.first_name %> <%= cohorts_student.student.last_name %></td>
+    <td class="text-center"><%= link_to cohorts_student.cohort.name, cohorts_student_path(cohorts_student), :class =>'btn btn-dark' %></td>
+    <td class="text-center"><%= cohorts_student.student.first_name %> <%= cohorts_student.student.last_name %></td>
     </tr>
     <% end %> 
   </tbody>
@@ -173,18 +221,23 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
 </div>
 </div>
 
-<br /><br />
+<br />
 
-<div class="col">
+    <div class="col">
 <div class="col-12">
-<table class="table table-sm table-bordered ">
+<table class="table table-sm table-bordered table-light">
   <thead>
-  <td colspan="4"><h3>  COHORTS-INSTRUCTORS  <%= link_to 'New Cohort-Instructor', new_cohortinstructor_path, class: "btn btn-primary" %></h3>
+ 
+ 
+ <td class="text-right" colspan="4"><h3>  COHRT-INST &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+ <%= link_to new_cohortinstructor_path, class: "btn btn-default" do %>
+      <i class="glyphicon glyphicon-plus"></i> 
+  <% end %>
  </h1></td>
     <tr>
    
-      <th scope="col">Cohort_id </th>
-      <th scope="col">instructor</th>
+      <th class="text-center" scope="col">Cohort </th>
+      <th class="text-center" scope="col">Instructor</th>
     </tr>
   </thead>
   <tbody>
@@ -192,19 +245,22 @@ Total of Instructors: <%= Instructor.all.count %> <br/><br/>
   
   <% @cohortinstructors.each do |cohortinstructors| %>
 
-    <td><%= link_to cohortinstructors.cohort.name, cohortinstructor_path(cohortinstructors), :class =>'btn btn-primary' %></td>
-    <td><%= cohortinstructors.instructor.first_name %> <%= cohortinstructors.instructor.last_name %></td>
+    <td class="text-center"><%= link_to cohortinstructors.cohort.name, cohortinstructor_path(cohortinstructors), :class =>'btn btn-dark' %></td>
+    <td class="text-center"> <%= cohortinstructors.instructor.first_name %> <%= cohortinstructors.instructor.last_name %></td>
     </tr>
     <% end %> 
   </tbody>
 </table>
 </div>
 </div>
+</div>
 
 
 
 
 
+</div>
+</div>
 
 
   

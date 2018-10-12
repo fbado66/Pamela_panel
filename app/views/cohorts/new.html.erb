@@ -8,13 +8,13 @@
    <div class="col-md-3"> 
     <div class="form-group">
     <%= form_with(model: @cohort) do |form| %>
-     Name: <%= form.text_field(:name) %> <br /><br />
-     <div> Start On: </div>
+     <strong>Name:</strong> <%= form.text_field(:name) %> <br /><br />
+     <div> <strong>Start On:</strong> </div>
      <%= form.date_field(:start_on) %><br /><br />
-     End On: <%= form.date_field(:end_on) %><br /><br />
-     Instructor: <%= form.select :instructor_id, options_for_select(@instructors, @cohort.instructor_id) %><br /><br />
-     Course: <%= form.select :course_id, options_for_select(@courses, @cohort.course_id) %><br /><br />
-     <div> Student: </div>
+     <strong>End On: </strong><%= form.date_field(:end_on) %><br /><br />
+     <strong>Instructor:</strong> <%= form.select :instructor_id, options_for_select(@instructors, @cohort.instructor_id) %><br /><br />
+     <strong>Course:</strong> <%= form.select :course_id, options_for_select(@courses, @cohort.course_id) %><br /><br />
+     <div><strong> Student: </strong></div>
      <%= form.select :student_id, options_for_select(@students, @cohort.student_id) %><br /><br />
 <%= form.submit :class => "btn-primary btn" %> 
      <% end %>

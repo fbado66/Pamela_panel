@@ -1,5 +1,10 @@
-<h1>Students#new</h1>
-<p>Find me in app/views/students/new.html.erb</p>
+<br/>
+<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+<p class="text-center" style="text-shadow: 1px 2px">TIME TRAVEL 66K ACADEMY</p>
+
+
+<h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> New Student </h2>
+<br/>
 
 <!-- students_path == /students  -->
 <div class="col-6 offset-md-3">
@@ -7,13 +12,13 @@
    <div class="col-md-3"> 
     <div class="form-group">
 <%= form_with(model: @student) do |form| %>
-  First Name: <%= form.text_field(:first_name) %><br />
-  Last Name: <%= form.text_field(:last_name) %><br />
-  Age: <%= form.text_field(:age) %><br />
-  Education:<%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br />
-  Email: <%= form.text_field(:email) %><br />
-  Cohort: <%= form.select :cohort_id, options_for_select(@cohorts, @student.id) %><br /><br />
-<%= form.submit class: "btn btn-primary" %>
+  <strong>First Name:</strong> <%= form.text_field(:first_name) %><br /><br />
+  <strong>Last Name:</strong> <%= form.text_field(:last_name) %><br /><br />
+  <strong>Age:</strong> <%= form.text_field(:age) %><br /><br />
+  <strong>Education:</strong><%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br /><br />
+  <strong>Email:</strong> <%= form.text_field(:email) %><br /><br />
+  <strong>Cohort:</strong> <%= form.select :cohort_id, options_for_select(@cohorts, @student.id) %><br /><br /><br />
+<%= form.submit class: "btn btn-success" %>
 <% end %>
 </div>
 </div>
