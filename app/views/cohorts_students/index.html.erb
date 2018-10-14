@@ -1,32 +1,29 @@
-<h1>CohortsStudents#index</h1>
-<p>Find me in app/views/cohorts_students/index.html.erb</p>
-
-
-
-
+<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+  <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>   
+    <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Students </h2>
+  <br/>
 
 <div class="container">
   <div class="row"> 
-  <div class="col-md-14 col"> 
-      <table class="table table-bordered table-striped table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Cohort:</th>
-      <th scope="col">Students:</th>
-      <th scope="col">Created at:</th>
-      
-    </tr>
-  </thead>
-<% @cohorts_student.each do |cohorts_student| %>
-    <tbody>
-    <tr>
-      <th><%= cohorts_student.cohort_id %><br />
-      <td><%= cohorts_student.student.last_name %><br />
-      <td><%= cohorts_student.created_at_formatted %><br />
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-</div>
-</div>
+    <div class="col-md-14 col"> 
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center" scope="col">Cohort:</th>
+            <th class="text-center" scope="col">Students:</th>
+            <th class="text-center" scope="col">Created at:</th>
+          </tr>
+        </thead>
+          <% @cohorts_student.each do |cohorts_student| %>
+          <tbody>
+            <tr>
+              <th class="text-center"><%= cohorts_student.cohort.name %><br />
+              <td class="text-center"><%= cohorts_student.student.first_name %> <%= cohorts_student.student.last_name %><br />
+              <td class="text-center"><%= cohorts_student.created_at_formatted %><br />
+            </tr>
+          </tbody>
+            <% end %>
+      </table>
+    </div>
+  </div>
 </div>

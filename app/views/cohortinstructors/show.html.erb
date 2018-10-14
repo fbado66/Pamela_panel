@@ -1,4 +1,38 @@
-<h1>Cohortinstructors#show</h1>
-<p>Find me in app/views/cohortinstructors/show.html.erb</p>
+<br/>
+  <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+    <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+      <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Instructors </h2>
+        <br/>
 
+<div class="container">
+  <div class="row"> 
+    <div class="col-8 offset-md-2"> 
+      <table class="table table-bordered table-striped table-hover">
+        <tbody>
+          <tr>
+           <td class="text-center">Cohort:</td>
+           <th class="text-center"> Instructor:</td>
+           <th class="text-center"> Action:</td>
+
+         </tr>
+         <tr> 
+           <div class="col-3">
+            <td class="text-center"><%= @cohortinstructor.cohort.name %><br /></td>
+           </div>
+           <div class="col-3">
+            <td class="text-center"> <%= @cohortinstructor.instructor.first_name %> <%= @cohortinstructor.instructor.last_name %><br /></td>
+           </div>
+           <div class="col-3">
+              <td class="text-center"><%= link_to '', cohortinstructor_path(@cohortinstructor), class: "glyphicon glyphicon-trash", data: {
+              confirm: "Are you sure want to delete: #{@cohortinstructor.instructor.last_name}?",}, method: :delete %> </td>
+           </div>
+         </tr>
+        </tbody>
+       </table>
+  
+  </div>
+ </div>
+</div>
+
+<br>
 

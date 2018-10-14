@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
 
+  get 'reminders/index'
+  get 'reminders/show'
+  get 'reminders/edit'
+  get 'reminders/delete'
+  get 'reminders/create'
+  get 'reminders/new'
+  get 'reminders/update'
   get 'homes/index'
   get 'homes/show'
   get 'homes/edit'
@@ -39,6 +46,7 @@ root to: 'homes#index'
   resources :coursecohorts
   resources :cohortinstructors
   resources :homes
+  resources :reminders
 
 
 

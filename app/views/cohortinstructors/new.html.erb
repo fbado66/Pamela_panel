@@ -1,15 +1,17 @@
 <br/>
 <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
-<p class="text-center" style="text-shadow: 1px 2px">TIME TRAVEL 66K ACADEMY</p>
-
-
-<h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Instructor </h2>
-<br/>
-<br/>
-<div class="container">
-<%= form_with(model: @cohortinstructor) do |form| %>
-  Cohort: <%= form.select :cohort_id, options_for_select(@cohort, @cohortinstructor.cohort_id) %><br />
-  Instructor: <%= form.select :instructor_id, options_for_select(@instructor, @cohortinstructor.instructor_id) %><br /><br/>
-<%= form.submit class:"btn btn-success" %>
-<% end %>
-</div>
+  <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+  <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Instructor </h2>
+    <br/>
+    <br/>
+  <div class="container">
+    <div class="container">
+      <%= form_with(model: @cohortinstructor) do |form| %>
+      <div><strong>Cohort:</strong></div>
+      <%= form.select :cohort_id, options_for_select(@cohort, @cohortinstructor.cohort_id) %><br /><br/>
+      <div><strong>Instructor:</strong></div> 
+      <%= form.select :instructor_id, options_for_select(@instructor, @cohortinstructor.instructor_id) %><br /><br/>
+      <%= form.submit class:"btn btn-success" %>
+      <% end %>
+    </div>
+  <div>

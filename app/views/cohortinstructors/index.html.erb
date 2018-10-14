@@ -1,32 +1,32 @@
-<h1>Cohortinstructors#index</h1>
-<p>Find me in app/views/cohortinstructors/index.html.erb</p>
 
-
+<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+  <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+    <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Instructors </h2>
+<br/>
 
 <div class="container">
   <div class="row"> 
-  <div class="col-md-14 col"> 
-      <table class="table table-bordered table-striped table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Cohort:</th>
-      <th scope="col">Instructor:</th>
-      <th scope="col">Created at:</th>
-      
-    </tr>
-  </thead>
-<% @cohortinstructors.each do |cohortinstructors| %>
-    <tbody>
-    <tr>
-      <th><%= cohortinstructors.cohort_id %><br />
-      <td><%= cohortinstructors.instructor.last_name %><br />
-      <td><%= cohortinstructors.created_at_formatted %><br />     
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-</div>
-</div>
+    <div class="col-md-14 col"> 
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Cohort:</th>
+            <th scope="col">Instructor:</th>
+            <th scope="col">Created at:</th>
+          </tr>
+        </thead>
+          <% @cohortinstructors.each do |cohortinstructors| %>
+            <tbody>
+              <tr>
+                <th><%= cohortinstructors.cohort_id %><br />
+                <td><%= cohortinstructors.instructor.last_name %><br />
+                <td><%= cohortinstructors.created_at_formatted %><br />     
+              </tr>
+            </tbody>
+              <% end %>
+      </table>
+    </div>
+  </div>
 </div>
 
 

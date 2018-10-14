@@ -1,49 +1,47 @@
 <div class="container">
-  <div class="row"> 
-  <div class="col-8 offset-md-2"> 
-    <table class="table table-bordered table-striped table-hover">
-     <tbody>
-     <tr>
-      <td>First Name:</td>
-      <td><%= instructor.first_name %><br /></td>
-    </tr>
-    <tr> 
-      <div class="col-3">
-       <th> Last Name:</td>
-      </div>
-      <div class="col-3">
-     <td> <%= instructor.last_name %><br /></td>
-      </div>
-    </tr>
-    <tr>
-      <td>Education:</td>
-     <td> <%= instructor.education %><br /></td>
-    </tr>
-    <tr>
-      <td>Age:</td>
-     <td> <%= instructor.age %><br /></td>
-    </tr>
-    <tr>
-      <td>Salary:</td>
-     <td><%= instructor.salary %><br /></td>
-    </tr>
-    <tr>
-      <td>Email:</td>
-      <td><%= instructor.email %><br /></td>
-    <tr>
-      <td>First Register on:</td>
-      <td><%= instructor.created_at_formatted %><br /></td>
-    </tr>
-    <tr>
-      <td>updated at:</td>
-      <td><%= instructor.updated_at_formatted %><br /></td>
-    </tr>
-   
-  </tbody>
+   <div class="row"> 
+    <div class="col-8 offset-md-2"> 
+      <table class="table table-bordered table-striped table-hover">
+       <tbody>
+        <tr>
+         <td>First Name:</td>
+         <td><%= instructor.first_name %><br /></td>
+        </tr>
+        <tr> 
+          <div class="col-3">
+            <th> Last Name:</td>
+          </div>
+          <div class="col-3">
+           <td> <%= instructor.last_name %><br /></td>
+          </div>
+        </tr>
+        <tr>
+          <td>Education:</td>
+          <td> <%= instructor.education %><br /></td>
+        </tr>
+        <tr>
+         <td>Age:</td>
+         <td> <%= instructor.age %><br /></td>
+        </tr>
+        <tr>
+         <td>Salary:</td>
+         <td><%= instructor.salary %><br /></td>
+        </tr>
+        <tr>
+         <td>Email:</td>
+         <td><%= instructor.email %><br /></td>
+        <tr>
+         <td>First Register on:</td>
+         <td><%= instructor.created_at_formatted %><br /></td>
+        </tr>
+        <tr>
+          <td>updated at:</td>
+          <td><%= instructor.updated_at_formatted %><br /></td>
+        </tr>
+      </tbody>
   </table>
   
- <%= link_to 'Edit', edit_instructor_path(instructor), class: "btn btn-success" %> 
-
+    <%= link_to 'Edit', edit_instructor_path(instructor), class: "btn btn-success" %> 
 
   </div>
  </div>

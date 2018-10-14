@@ -1,8 +1,6 @@
 <h1>CohortsStudents#edit</h1>
 <p>Find me in app/views/cohorts_students/edit.html.erb</p>
 
-
-
 <%= form_with(model: @cohorts_student) do |form| %>
   Cohort: <%= form.select :cohort_id, options_for_select(@cohort, @cohorts_student.cohort_id) %><br />
 <%= form.submit %>

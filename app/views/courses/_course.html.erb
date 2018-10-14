@@ -1,44 +1,38 @@
 
 <div class="container">
   <div class="row"> 
-  <div class="col-md-6 col-md-offset-3"> 
-    <table class="table table-bordered table-striped table-hover">
-         <tbody id="killer<%= course.id %>">
-
-    <tr> 
-      <div class="col-3">
-       <th> Course </td>
-      </div>
-      <div class="col-3">
-       <th><%= course.name %></td>
-      </div>
-    </tr>
-    <tr>
-      <td>Total of Hours:</td>
-      <td><%= course.total_of_hrs %></td>
-    </tr>
-    <tr>
-      <td>Description:</td>
-      <td> <%= course.description %></td>
-    </tr>
-    <tr>
-      <td>Created At:</td>
-      <td> <%= course.created_at %></td>
-    </tr>
-    <tr>
-      <td>Updated At:</td>
-      <td><%= course.updated_at %></td>
-    </tr>
-   
-  </tbody>
-  </table>
-  
+    <div class="col-md-6 col-md-offset-3"> 
+      <table class="table table-bordered table-striped table-hover">
+        <tbody id="killer<%= course.id %>">
+          <tr> 
+            <div class="col-3">
+              <th> Course </td>
+            </div>
+            <div class="col-3">
+              <th><%= course.name %></td>
+            </div>
+          </tr>
+          <tr>
+            <td>Total of Hours:</td>
+            <td><%= course.total_of_hrs %></td>
+          </tr>
+          <tr>
+           <td>Description:</td>
+           <td> <%= course.description %></td>
+          </tr>
+          <tr>
+           <td>Created At:</td>
+           <td> <%= course.created_at %></td>
+          </tr>
+          <tr>
+           <td>Updated At:</td>
+           <td><%= course.updated_at %></td>
+          </tr>
+       </tbody>
+      </table>
      <%= link_to 'Edit', edit_course_path(course), class: "btn btn-success" %> 
-
-
   </div>
  </div>
 </div>
-
 
 <br>

@@ -1,12 +1,32 @@
-<div >
-<% puts "!!!!!!!!!!!!!!!!!!"%>
-<% puts cohorts_student %>
-Cohort: <%= cohorts_student.cohort_id %><br />
-Students <%= cohorts_student.student.first_name %> <%= cohorts_student.student.last_name %>
 
+<div class="container">
+  <div class="row"> 
+    <div class="col-8 offset-md-2"> 
+      <table class="table table-bordered table-striped table-hover">
+        <tbody>
+          <tr>
+           <td class="text-center">Cohort:</td>
+           <th class="text-center"> Student:</td>
+           <th class="text-center"> Action: </td>
+         </tr>
+         <tr> 
+           <div class="col-3">
+            <td class="text-center"><%= cohorts_student.cohort.name %><br /></td>
+           </div>
+           <div class="col-3">
+            <td class="text-center"> <%= cohorts_student.student.first_name %> <%= cohorts_student.student.last_name %><br /></td>
+           </div>
+           <div class="col-3">
+              <td class="text-center"><%= link_to '', cohorts_student_path(cohorts_student), class: "glyphicon glyphicon-trash", data: {
+              confirm: "Are you sure want to delete: #{cohorts_student.student.first_name}?",}, method: :delete %> </td>
+           </div>
+         </tr>
+        </tbody>
+       </table>
 
- <%= link_to 'Edit', edit_cohorts_student_path(cohorts_student), :class => 'navbar-link' %> | 
-    <%= link_to 'Delete', cohorts_student_path(cohorts_student), class: "btn btn-danger", data: {
-      confirm: "Are you sure want to delete: #{cohorts_student.student.first_name}?",}, method: :delete %> 
-
+  </div>
+ </div>
 </div>
+
+<br>
+

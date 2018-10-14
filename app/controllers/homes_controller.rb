@@ -8,6 +8,9 @@ class HomesController < ApplicationController
      end 
 
     #  student table 
+     @reminders = Reminder.all
+
+    #  student table 
      @students = Student.all
 
     #  instructor table
