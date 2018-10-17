@@ -13,6 +13,9 @@ class CohortsController < ApplicationController
     @instructors = Instructor.all.map{ |i| [i.first_name, i.id] }
     @students = Student.all.map{ |s| [s.first_name, s.id] }
     @cohort = Cohort.new 
+
+    
+
   end
 
   def create
@@ -24,9 +27,15 @@ class CohortsController < ApplicationController
       course_id: params[:cohort][:course_id],
       student_id: params[:cohort][:student_id]
     )
-    session[:cohort_id] = cohort.id
-    redirect_to cohorts_path
+  
+    if session[:cohort_id] = cohort.id
+    redirect_to cohorts_path, notice: 'Cohort successfully created!'
+    
+    else 
+      redirect_to new_cohort_path, alert: 'Something went wrong!, missing information for some fields'
+    end 
   end
+
   
   def edit
     @cohort = Cohort.find(params[:id])
@@ -49,8 +58,6 @@ class CohortsController < ApplicationController
   end
 
  
-
-
   def destroy
      @cohort = Cohort.find(params[:id])
      @cohort.destroy 

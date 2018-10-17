@@ -22,12 +22,7 @@
   </head>
 <body>
    
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+
 
 <nav class="navbar navbar-expand navbar-dark bg-dark">
 <% if admin_signed_in? %>
@@ -78,6 +73,12 @@
       </span>
     <% end %>
 </nav>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
    <%= yield %>
   </body>
 </html>

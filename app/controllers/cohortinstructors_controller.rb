@@ -23,8 +23,11 @@ def create
      cohort_id: params[:cohortinstructor][:cohort_id]
      )
     
-    session[:cohortinstructor_id] = cohortinstructor.id
-    redirect_to cohortinstructors_path
+    if session[:cohortinstructor_id] = cohortinstructor.id
+    redirect_to cohortinstructors_path, notice: 'Cohort-Instructor successfully created!'
+    else 
+    redirect_to new_cohortinstructors_path, alert: 'Something went wrong!, missing information for some fields'
+    end 
 end 
 
   def update

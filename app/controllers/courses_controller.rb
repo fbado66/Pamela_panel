@@ -16,10 +16,14 @@ class CoursesController < ApplicationController
       name: params[:course][:name],
       total_of_hrs: params[:course][:total_of_hrs],
       description: params[:course][:description]
-
     )
-    session[:course_id] = course.id
-    redirect_to courses_path
+     
+    if session[:course_id] = course.id 
+    redirect_to courses_path, notice: 'Course successfully created!'    
+    else 
+    redirect_to new_course_path, alert: 'Something went wrong!, missing information for some fields'
+    end 
+  
   end
 
 

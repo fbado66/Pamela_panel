@@ -17,8 +17,11 @@ class StudentsController < ApplicationController
       education: params[:student][:education],
       email: params[:student][:email],
     )
-    session[:student_id] = student.id
-    redirect_to students_path
+    if session[:student_id] = student.id
+    redirect_to students_path, notice: 'Student successfully created!'    
+    else 
+    redirect_to new_student_path, alert: 'Something went wrong!, missing information for some fields'
+    end 
   end
 
   def show

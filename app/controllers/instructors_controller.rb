@@ -17,8 +17,12 @@ class InstructorsController < ApplicationController
       education: params[:instructor][:education],
       email: params[:instructor][:email]
     )
-    session[:instructor_id] = instructor.id
-    redirect_to instructors_path
+    
+    if session[:instructor_id] = instructor.id
+    redirect_to instructors_path, notice: 'Instructor successfully created!'    
+    else 
+    redirect_to new_instructor_path, alert: 'Something went wrong!, missing information for some fields'
+    end 
   end
 
   def update

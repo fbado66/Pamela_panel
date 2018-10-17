@@ -31,9 +31,12 @@ class CohortsStudentsController < ApplicationController
      student_id: student_id
      )
     end 
-    # student_id => params[:cohorts_student][:student_id]
-    session[:cohorts_student_id] = cohorts_student.id
-    redirect_to cohorts_students_path
+
+    if session[:cohorts_student_id] = cohorts_student.id
+    redirect_to cohorts_students_path, notice: 'Cohort-Students successfully created!'
+  else 
+    redirect_to new_cohort_students_path, alert: 'Something went wrong!, missing information for some fields'
+  end 
 end 
 
   def update
