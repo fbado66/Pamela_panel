@@ -7,7 +7,7 @@
 <div class="container">
   <div class="col-5 offset-md-3">
     <div class="jumbotron">
-      <%= form_with(model: @cohort) do |form| %>
+      <%= form_with(model: @cohorts) do |form| %>
       <div>Name:</div> 
       <%= form.text_field(:name) %><br /><br/>
       <div>Start On:</div>
@@ -15,11 +15,11 @@
       <div>End On:</div> 
       <%= form.date_field(:end_on) %><br /><br/>
       <div>Instructor:</div> 
-      <%= form.select :instructor_id, options_for_select(@instructors, @cohort.instructor_id) %><br /><br/>
+      <%= form.select :instructor_id, options_for_select(@instructors, @cohorts.instructor_id) %><br /><br/>
       <div>Course:</div> 
-      <%= form.select :course_id, options_for_select(@courses, @cohort.course_id) %><br /><br/>
+      <%= form.select :course_id, options_for_select(@courses, @cohorts.course_id) %><br /><br/>
       <div>Student:</div> 
-      <%= form.select :student_id, options_for_select(@students, @cohort.student_id) %><br /><br/>
+      <%= form.select :student_id, options_for_select(@students, @cohorts.student_id) %><br /><br/>
       <%= form.submit class: "btn btn-success"%>
       <% end %>
     </div>

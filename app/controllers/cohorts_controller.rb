@@ -13,9 +13,6 @@ class CohortsController < ApplicationController
     @instructors = Instructor.all.map{ |i| [i.first_name, i.id] }
     @students = Student.all.map{ |s| [s.first_name, s.id] }
     @cohort = Cohort.new 
-
-    
-
   end
 
   def create
@@ -27,7 +24,7 @@ class CohortsController < ApplicationController
       course_id: params[:cohort][:course_id],
       student_id: params[:cohort][:student_id]
     )
-  
+
     if session[:cohort_id] = cohort.id
     redirect_to cohorts_path, notice: 'Cohort successfully created!'
     
@@ -38,7 +35,7 @@ class CohortsController < ApplicationController
 
   
   def edit
-    @cohort = Cohort.find(params[:id])
+    @cohorts = Cohort.find(params[:id])
     @courses = Course.all.map{ |c| [c.name, c.id] }
     @instructors = Instructor.all.map{ |i| [i.first_name, i.id] }
     @students = Student.all.map{ |s| [s.first_name, s.id] }
@@ -65,7 +62,7 @@ class CohortsController < ApplicationController
      respond_to do |format|
       format.html 
       format.js
-   end  
+      end  
   end
 
 end

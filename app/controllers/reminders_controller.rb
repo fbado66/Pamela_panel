@@ -8,10 +8,10 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new
     
   end
+
   def show
     @reminder = Reminder.find(params[:id])
- end
-
+  end
 
 
  def create
