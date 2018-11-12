@@ -1,3 +1,4 @@
+<div id="forms-edit">
 <br/>
   <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
     <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
@@ -6,13 +7,13 @@
 
   <div class="container">
     <div class="col-5 offset-md-3">
-      <div class="jumbotron">
+     <br><br>
         <%= form_with(model: @course) do |form| %>
-          <div>Name:</div> 
+          <strong>Name:</strong><br>
           <%= form.text_field(:name) %><br /><br/>
-          <div>Total of Hours:</div>
+          <strong>Total of Hours:</strong><br>
           <%= form.text_field(:total_of_hrs) %><br /><br/>
-          <div>Description:</div>
+          <strong>Description:</strong><br>
           <%= form.text_field(:description) %><br /><br/>
           <%= form.submit class: "btn btn-success" %>
           <% end %>

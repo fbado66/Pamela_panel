@@ -17,16 +17,16 @@
           <td><%= cohort.end_on %></td>
         </tr>
         <tr>
-          <td>Instructor Id:</td>
-          <td><%= cohort.instructor_id %></td>
+          <td>Instructor:</td>
+          <td><%= Instructor.find(cohort.instructor_id).first_name.capitalize %></td>
         </tr>
         <tr>
-         <td>Course Id:</td>
-         <td><%= cohort.course_id %></td>
+         <td>Course:</td>
+              <td><%= Course.find(cohort.course_id).name.capitalize %></td>
         </tr>
         <tr>
-          <td>Student Id:</td>
-          <td><%= cohort.student_id%></td>
+          <td>Student:</td>
+              <td><%= Student.find(cohort.student_id).last_name.capitalize%>, <%= Student.find(cohort.student_id).first_name.capitalize%></td>
          </tr>
       </tbody>
       </table>

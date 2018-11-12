@@ -1,49 +1,51 @@
 <div id="cohorts-index">
-  <div class="hero">
-    <br/>
+  <br><br>
+    <div class="hero">
+      <br><br><br>
       <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
         <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
           <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohorts </h2>
-    <br/>
-  </div>
-      <div class="container">
-        <%= link_to 'New Cohort', new_cohort_path, class: "btn btn-success btn-lg btn-block" %>
-      </div>
-        <br />
+            <div class="container">
+              <br>
+                <%= link_to 'New Cohort', new_cohort_path, class: "btn btn-success btn-lg btn-block" %>
+            </div>
+       
     <div class="container">
+     <br />
       <div class="row"> 
         <div class="col-md-14 col"> 
          <table class="table table-bordered table-striped table-hover">
           <thead class="thead-dark">
             <tr>
-             <th scope="col">Id</th>
-             <th scope="col">Cohort:</th>
-             <th scope="col">Start on:</th>
-             <th scope="col">End on:</th>
-             <th scope="col">Instructor:</th>
-             <th scope="col">Course:</th>
-             <th scope="col">Student:</th>
-             <th scope="col">Delete</th>
+             <th class="text-center" scope="col">Id</th>
+             <th class="text-center" scope="col">Name:</th>
+             <th class="text-center" scope="col">Start on:</th>
+             <th class="text-center" scope="col">End on:</th>
+             <th class="text-center" scope="col">Instructor:</th>
+             <th class="text-center" scope="col">Course:</th>
+             <th class="text-center" scope="col">Student:</th>
+             <th class="text-center" scope="col">Delete</th>
             </tr>
           </thead>
            <% @cohorts.each do |cohort| %>
             <tbody id="killer<%= cohort.id %>">
-            <tr>
+            <tr class="text-center">
               <td><%= link_to cohort.id, cohort_path(cohort), :class => 'btn btn-default'  %></td>
-              <th><%= cohort.name %></td>
+              <td><%= cohort.name.capitalize %></td>
               <td><%= cohort.start_on %></td>
               <td><%= cohort.end_on %></td>
-              <td><%= cohort.instructor_id %></td>
-              <td><%= cohort.course_id %></td>
-              <td><%= cohort.student_id%></td>
+              <td><%= Instructor.find(cohort.instructor_id).first_name.capitalize %></td>
+              <td><%= Course.find(cohort.course_id).name.capitalize %></td>
+              <td><%= Student.find(cohort.student_id).last_name.capitalize%>, <%= Student.find(cohort.student_id).first_name.capitalize%></td>
                 <td>  
                  <%= link_to(cohort_path(id: cohort.id), method: :delete, remote: true) do %>
                   <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
-                  <% end %>
+                  <%end%>
                 </td>
             </tr>
           </tbody>
-            <% end %>
+  
+          <%end%>
          </table>
        </div>
       </div>

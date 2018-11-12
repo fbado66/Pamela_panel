@@ -1,3 +1,4 @@
+<div id="forms-edit">
 <br/>
   <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
   <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
@@ -6,19 +7,19 @@
 
 <div class="container">
   <div class="col-5 offset-md-3">
-    <div class="jumbotron">
+    <br><br>
       <%= form_with(model: @cohorts) do |form| %>
-      <div>Name:</div> 
+      <strong>Name:</strong> <br>
       <%= form.text_field(:name) %><br /><br/>
-      <div>Start On:</div>
+      <strong>Start On:</strong> <br>
       <%= form.date_field(:start_on) %><br /><br/>
-      <div>End On:</div> 
+      <strong>End On:</strong> <br>
       <%= form.date_field(:end_on) %><br /><br/>
-      <div>Instructor:</div> 
+      <strong>Instructor:</strong><br>
       <%= form.select :instructor_id, options_for_select(@instructors, @cohorts.instructor_id) %><br /><br/>
-      <div>Course:</div> 
+      <strong>Course:</strong><br>
       <%= form.select :course_id, options_for_select(@courses, @cohorts.course_id) %><br /><br/>
-      <div>Student:</div> 
+      <strong>Student:</strong> <br>
       <%= form.select :student_id, options_for_select(@students, @cohorts.student_id) %><br /><br/>
       <%= form.submit class: "btn btn-success"%>
       <% end %>

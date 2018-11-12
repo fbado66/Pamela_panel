@@ -15,3 +15,14 @@
  */
 
   /* @import 'bootstrap/glyphicons';  */
+
+
+  .alert-success{
+    text-align: center; 
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 250px;
+      height: 50px;
+      border: 3px solid #73AD21;    
+    }

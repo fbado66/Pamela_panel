@@ -4,35 +4,64 @@
 
 
 
-#homes-index , #instructor-index, #courses-index, #cohorts-index, #students-index{
+#homes-index, #instructor-index, #courses-index, #cohorts-index, #students-index{
+  margin-top: -90px;
   h1 {
     color: red;
   }
-
   img {
     height: 100%px;
   }
-
   .frame {
     height: 100%px;
     background-image: image-url('home/image8.jpg');
     top: 0;
     background-size: cover;
   }
-
   .hero{
     width: 100%;
-    height: 200%;
+    height: 100%;
     background-image: image-url('home/image10.jpg');
     background-size: cover;
   }
+  .icon{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 }
 
+#forms-new{
+  margin-top: -21px;
+  height: 700px;
+  background-image: image-url('home/shape.png');
+  background-size: cover;
+}
+
+#forms-edit{
+  margin-top: -21px;
+  height: 700px;
+  background-image: image-url('home/wave2.png');
+  background-size: cover;
+}
+
+#forms-show{
+  margin-top: -21px;
+  height: 700px;
+  background-image: image-url('home/wave1.jpg');
+  background-size: cover;
+}
 
 #sessions-new {
+    background-image: image-url('home/wave3.jpg');
+    background-size: cover;
+    height: 680px;
+    margin-top: -21px;
+
   body, html {
     height: 100%;
-}
+  }  
+
 
 .bg { 
     background-image: url("home/image1.jpeg");
@@ -47,13 +76,37 @@
 
 
 #homes-show{
-  height: 100%px;
-    background-image: image-url('home/image0.jpg');
-    top: 0;
-    background-size: cover;
-.welcome{
-  font-family: Arial, Helvetica, sans-serif;
-  // background-image: linear-gradient(to left, black, white, black, white); /* Standard syntax (must be last) */
-  opacity: 0.9;
-  height: 100%;
-}}
+  height: 740px;
+  background-image: image-url('home/image0.jpg');
+  background-size: cover;
+
+  .coders{
+    text-shadow: 2px 2px;
+    text-align: center; 
+    margin-top: 200px;
+    font-size: 40px;
+    line-height: 86px;
+    position: absolute;
+    width: 100%;
+    }
+
+    .links{
+    position: absolute;
+    bottom: 90px;
+    width: 100%;
+    text-align: center;
+  
+    }
+    // .link_1{
+    //   padding-right: 9px;
+    // }
+
+  .welcome{
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.9;
+    height: 100%;
+    margin-top: -121px;
+    }
+
+
+}

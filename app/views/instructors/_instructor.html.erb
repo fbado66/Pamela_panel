@@ -9,19 +9,19 @@
     </tr>
         <tr>
          <td>First Name:</td>
-         <td><%= instructor.first_name %><br /></td>
+         <td><%= instructor.first_name.capitalize%><br /></td>
         </tr>
         <tr> 
           <div class="col-3">
-            <th> Last Name:</td>
+            <td><strong>Last Name:</strong> </td>
           </div>
           <div class="col-3">
-           <td> <%= instructor.last_name %><br /></td>
+           <td> <strong><%= instructor.last_name.capitalize %></strong><br /></td>
           </div>
         </tr>
         <tr>
           <td>Education:</td>
-          <td> <%= instructor.education %><br /></td>
+          <td> <%= instructor.education.capitalize %><br /></td>
         </tr>
         <tr>
          <td>Age:</td>
@@ -33,7 +33,7 @@
         </tr>
         <tr>
          <td>Email:</td>
-         <td><%= instructor.email %><br /></td>
+         <td><%= instructor.email.capitalize %><br /></td>
         <tr>
          <td>First Register on:</td>
          <td><%= instructor.created_at_formatted %><br /></td>

@@ -48,8 +48,6 @@ class InstructorsController < ApplicationController
   end
 
   
-
-  
   def destroy
     @instructor = Instructor.find(params[:id])
     @instructor.destroy

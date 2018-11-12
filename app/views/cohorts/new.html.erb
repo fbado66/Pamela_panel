@@ -1,14 +1,14 @@
+<div id="forms-new">
 <br/>
   <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
     <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
       <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> New Cohort </h2>
         <br/>
     <div class="col-6 offset-md-3">
-      <div class="jumbotron">
         <div class="col-md-3"> 
           <div class="form-group">
             <%= form_with(model: @cohort) do |form| %>
-            <strong>Name:</strong> <%= form.text_field(:name) %> <br /><br />
+            <strong>Name:</strong > <%= form.text_field(:name) %> <br /><br />
             <div> <strong>Start On:</strong> </div>
             <%= form.date_field(:start_on) %><br /><br />
             <strong>End On: </strong><%= form.date_field(:end_on) %><br /><br />
@@ -19,10 +19,12 @@
              <%= form.submit :class => "btn-success btn" %> 
              <% end %>
             </div>
-           </div>
+          
          </div>
        </div>
     </div>
+
+</div>
       
 
 

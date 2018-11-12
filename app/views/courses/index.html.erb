@@ -1,53 +1,53 @@
 <div id="courses-index">
-  <div class="hero">
-    <br/>
-   <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
-     <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
-       <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Courses </h2>
-     <br/>
-  </div>
-  <div class="container">
-    <%= link_to 'New Course', new_course_path, class: "btn btn-success btn-lg btn-block" %>
-  </div>
-  <br />
-   <div class="container">
-    <div class="row"> 
-      <div class="col-md-14 col"> 
-        <table class="table table-bordered table-striped table-hover">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Id:</th>
-              <th scope="col">Course:</th>
-              <th scope="col">Total of Hours:</th>
-              <th scope="col">Description:</th>    
-              <th scope="col">Registered on</th>
-              <th scope="col">Updated on</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead >
-             <% @courses.each do |course| %>
-          <tbody id="killer<%= course.id %>">
-           <tr>
-              <td><%= link_to course.id, course_path(course), :class => 'btn btn-default'  %></td>
-              <th><%= course.name %></td>
-              <td><%= course.total_of_hrs %></td>
-              <td> <%= course.description %></td>
-              <td> <%= course.created_at_formatted %></td>
-              <td><%= course.updated_at_formatted %></td>
-              <td>  
-                 <%= link_to(course_path(id: course.id), method: :delete, remote: true) do %>
-                 <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
-                 <% end %>
-              </td>
-           </tr>
-          </tbody>
-         <% end %>
-        </table>
-      </div>
-    </div>
-  </div>
+  <br><br>
+    <div class="hero">
+      <br><br><br>  
+        <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+          <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+           <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Courses </h2>
 
- </div>
+            <div class="container">
+              <br>
+              <%= link_to 'New Course', new_course_path, class: "btn btn-success btn-lg btn-block" %>
+            </div>
+              <br />
+                <div class="container">
+                  <div class="row"> 
+                    <div class="col-md-14 col"> 
+                      <table class="table table-bordered table-striped table-hover">
+                       <thead class="thead-dark">
+                          <tr>
+                            <th class="text-center" scope="col">Id:</th>
+                            <th class="text-center" scope="col">Course:</th>
+                            <th class="text-center" scope="col">Total of Hours:</th>
+                            <th class="text-center" scope="col">Description:</th>    
+                            <th class="text-center" scope="col">Registered on</th>
+                            <th class="text-center" scope="col">Updated on</th>
+                            <th class="text-center" scope="col">Delete</th>
+                          </tr>
+                        </thead >
+                         <% @courses.each do |course| %>
+                          <tbody id="killer<%= course.id %>">
+                           <tr class="text-center">
+                            <td><%= link_to course.id, course_path(course), :class => 'btn btn-default'  %></td>
+                            <td><%= course.name.capitalize %></td>
+                            <td><%= course.total_of_hrs %></td>
+                            <td> <%= course.description.capitalize %></td>
+                            <td> <%= course.created_at_formatted %></td>
+                            <td><%= course.updated_at_formatted %></td>
+                            <td>  
+                              <%= link_to(course_path(id: course.id), method: :delete, remote: true) do %>
+                              <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>
+                              <% end %>
+                            </td>
+                           </tr>
+                          </tbody>
+                         <% end %>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+    </div>
 </div>
 
 

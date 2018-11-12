@@ -1,65 +1,58 @@
-<div id="instructors-index">
+<div id="instructor-index">
+ <br><br>
+    <div class="hero">
+      <br><br><br>
+        <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+        <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+        <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Instructors </h2>
+        <br/>
 
-<div class="hero">
-
-<br/>
-<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
-<p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
-
-
-<h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Instructors </h2>
-<br/>
-
-
-
-</div>
-<div class="container">
-     <%= link_to 'New Instructor', new_instructor_path, class: "btn btn-success btn-lg btn-block" %>
-</div>
-<br />
-<div class="container">
-  <div class="row"> 
-  <div class="col-md-14 col"> 
-      <table class="table table-bordered table-striped table-hover table-light">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Education</th>
-      <th scope="col">Age</th>
-      <th scope="col">Salary</th>
-      <th scope="col">Email</th>      
-      <th scope="col">Registered on</th>
-      <th scope="col">Updated on</th>
-      <th scope="col">Delete</th>
-
-    </tr>
-  </thead>
-  <% @instructors.each do |instructor| %>
-    <tbody id="killer<%= instructor.id %>">
-    <tr>
-      <td><%= link_to instructor.id, instructor_path(instructor), :class => 'btn btn-default'  %></td>
-       <th><%= instructor.first_name %></td>
-      <td><%= instructor.last_name %></td>
-      <td> <%= instructor.education %></td>
-      <td> <%= instructor.age %></td>
-      <td> $ <%= instructor.salary %></td>
-      <td><%= instructor.email %></td>
-      <td><%= instructor.created_at_formatted %></td>
-      <td><%= instructor.updated_at_formatted %></td>
-      <td>  
-        <%= link_to(instructor_path(id: instructor.id), method: :delete, remote: true) do %>
-         <p class="text-center"> <span  class="glyphicon glyphicon-trash"></span></p>
-        <% end %>
-      </td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-</div>
-</div>
-</div>
-
-</div>
+        <div class="container">
+          <%= link_to 'New Instructor', new_instructor_path, class: "btn btn-success btn-lg btn-block" %>
+        </div>
+          <br />
+          <div class="container">
+            <div class="row"> 
+              <div class="col-md-14 col"> 
+                <table class="table table-bordered table-striped table-hover table-light">
+                  <thead class="thead-dark">
+                    <tr >
+                      <th class="text-center" scope="col">Id</th>
+                      <th class="text-center" scope="col">First Name</th>
+                      <th class="text-center" scope="col">Last Name</th>
+                      <th class="text-center" scope="col">Education</th>
+                      <th class="text-center" scope="col">Age</th>
+                      <th class="text-center" scope="col">Salary</th>
+                      <th class="text-center" scope="col">Email</th>      
+                      <th class="text-center" scope="col">Registered on</th>
+                      <th class="text-center" scope="col">Updated on</th>
+                      <th class="text-center" scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                <% @instructors.each do |instructor| %>
+              <tbody id="killer<%= instructor.id %>">
+                <tr class="text-center">
+                  <td><%= link_to instructor.id, instructor_path(instructor), :class => 'btn btn-default'  %></td>
+                  <td><%= instructor.first_name.capitalize %></td>
+                  <td><%= instructor.last_name.capitalize %></td>
+                  <td> <%= instructor.education %></td>
+                  <td> <%= instructor.age %></td>
+                  <td> $ <%= instructor.salary %></td>
+                  <td><%= instructor.email %></td>
+                  <td><%= instructor.created_at_formatted %></td>
+                  <td><%= instructor.updated_at_formatted %></td>
+                  <td>  
+                    <%= link_to(instructor_path(id: instructor.id), method: :delete, remote: true) do %>
+                      <p class="text-center"> <span  class="glyphicon glyphicon-trash"></span></p>
+                    <% end %>
+                  </td>
+                </tr>
+               </tbody>
+            <% end %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

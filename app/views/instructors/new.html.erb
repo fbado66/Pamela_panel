@@ -1,26 +1,24 @@
-<br/>
-<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
-<p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+<div id="forms-new">
+  <br/>
+    <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+      <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
 
-
-<h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> New Instructor </h2>
-<br/>
-
-<div class="col-6 offset-md-3">
- <div class="jumbotron">
-   <div class="col-md-3"> 
-    <div class="form-group">
-<%= form_with(model: @instructor) do |form| %>
-  <strong>First Name:</strong> <%= form.text_field(:first_name) %><br /><br/>
-  <strong>Last Name:</strong> <%= form.text_field(:last_name) %><br /><br/>
-  <strong>Age:</strong> <%= form.text_field(:age) %><br /><br/>
-  <strong>Salary:</strong> <%= form.text_field(:salary) %><br /><br/>
-  <strong>Education:</strong><%= form.select(:education, options_for_select([['High School'], ['College'],['TA'], ['Doctors'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br /><br/>
-  <strong>Email:</strong> <%= form.text_field(:email) %><br /><br/>
- <strong> Cohort: </strong> <%= form.select :cohort_id, options_for_select(@cohorts, @instructor.id) %><br /><br />
-<%= form.submit class: "btn btn-success"%>
-<% end %>
-</div>
-</div>
-</div>
+        <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> New Instructor </h2>
+          <br/>
+      <div class="col-6 offset-md-3">
+        <div class="col-md-3"> 
+          <div class="form-group">
+            <%= form_with(model: @instructor) do |form| %>
+              <strong>First Name:</strong> <%= form.text_field(:first_name) %><br /><br/>
+              <strong>Last Name:</strong> <%= form.text_field(:last_name) %><br /><br/>
+              <strong>Age:</strong> <%= form.text_field(:age) %><br /><br/>
+              <strong>Salary:</strong> <%= form.text_field(:salary) %><br /><br/>
+              <strong>Education:</strong><%= form.select(:education, options_for_select([['High School'], ['College'],['TA'], ['Doctors'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br /><br/>
+              <strong>Email:</strong> <%= form.text_field(:email) %><br /><br/>
+            <strong> Cohort: </strong> <%= form.select :cohort_id, options_for_select(@cohorts, @instructor.id) %><br /><br />
+            <%= form.submit class: "btn btn-success"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
 </div>
