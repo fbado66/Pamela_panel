@@ -26,7 +26,7 @@ def create
     if session[:cohortinstructor_id] = cohortinstructor.id
     redirect_to cohortinstructors_path, notice: 'Cohort-Instructor successfully created!'
     else 
-    redirect_to new_cohortinstructors_path, alert: 'Something went wrong!, missing information for some fields'
+    redirect_to new_cohortinstructor_path, alert: 'Something went wrong!, missing information for some fields'
     end 
 end 
 
@@ -43,7 +43,7 @@ end
   def new
     @cohortinstructor = Cohortinstructor.new
     @cohort = Cohort.all.map{ |c| [c.id] }
-    @instructor = Instructor.all.map{ |c| [c.id] }
+    @instructor = Instructor.all.map{ |c| [c.last_name, c.id] }
   end
 
 end

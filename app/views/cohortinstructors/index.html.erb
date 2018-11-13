@@ -1,30 +1,35 @@
+<div id="instructor-index">
+ <br><br>
+    <div class="hero">
+      <br><br><br>
+    <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+      <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+        <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Instructors </h2>
+    <br/>
 
-<h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
-  <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
-    <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Instructors </h2>
-<br/>
-
-<div class="container">
-  <div class="row"> 
-    <div class="col-md-14 col"> 
-      <table class="table table-bordered table-striped table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Cohort:</th>
-            <th scope="col">Instructor:</th>
-            <th scope="col">Created at:</th>
-          </tr>
-        </thead>
-          <% @cohortinstructors.each do |cohortinstructors| %>
-            <tbody>
+    <div class="container">
+      <div class="row"> 
+    <div class="col-8 offset-md-2"> 
+          <table class="table table-bordered table-striped table-hover">
+            <thead class="thead-dark">
               <tr>
-                <th><%= cohortinstructors.cohort_id %><br />
-                <td><%= cohortinstructors.instructor.last_name %><br />
-                <td><%= cohortinstructors.created_at_formatted %><br />     
+                <th class="text-center" scope="col">Cohort:</th>
+                <th class="text-center" scope="col">Instructor:</th>
+                <th class="text-center" scope="col">Created at:</th>
               </tr>
-            </tbody>
-              <% end %>
-      </table>
+            </thead>
+              <% @cohortinstructors.each do |cohortinstructors| %>
+                <tbody>
+                  <tr class="text-center">
+                    <td><%= cohortinstructors.cohort.name %><br />
+                    <td><%= cohortinstructors.instructor.last_name %><br />
+                    <td><%= cohortinstructors.created_at_formatted %><br />     
+                  </tr>
+                </tbody>
+                  <% end %>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

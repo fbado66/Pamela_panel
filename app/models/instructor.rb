@@ -7,6 +7,7 @@ class Instructor < ApplicationRecord
 
 
     validates :age, numericality: { 
+                      greater_than: 0,
                       less_than: 151, message: "150 is the limit" }
     validates :salary, numericality: { 
                         greater_than: 0,

@@ -1,17 +1,19 @@
-<br/>
-  <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
-    <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
-      <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Students </h2>
-      <br/>
+<div id="forms-new">
+  <br/>
+    <h1 class="text-center"style="text-shadow: 3px 2px; color: black" >Coders of the Future</h1>
+      <p class="text-center" style="font-size:17px;">TIME TRAVEL 66K ACADEMY</p>
+        <h2 class="text-center" style="text-shadow: 3px 2px; color: gray"> Cohort-Students </h2>
+        <br/>
 
-<div class="container">
-  <div class="container">   
-    <%= form_with(model: @cohorts_student) do |form| %>
-      <div><strong>Cohort:</strong></div> 
-        <%= form.select :cohort_id, options_for_select(@cohort, @cohorts_student.cohort_id) %><br /><br/>
-      <div><strong>Students:</strong></div> 
-        <%= form.select :student_id, options_for_select(@student, @cohorts_student.student_id) ,{ :prompt => "Please select"},{ :multiple => true, :size => 5 }%><br /> <br/>
-        <%= form.submit class:"btn btn-success" %>
-        <% end %>
+  <div class="container">
+    <div class="container">   
+      <%= form_with(model: @cohorts_student) do |form| %>
+        <div><strong>Cohort:</strong></div> 
+          <%= form.select :cohort_id, options_for_select(@cohort, @cohorts_student.cohort_id) %><br /><br/>
+        <div><strong>Students:</strong></div> 
+          <%= form.select :student_id, options_for_select(@student, @cohorts_student.student_id) ,{ :prompt => "Please select"},{ :multiple => true, :size => 5 }%><br /> <br/>
+          <%= form.submit class:"btn btn-success" %>
+          <% end %>
+    </div>
   </div>
-</div>
+  </div>

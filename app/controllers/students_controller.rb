@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-    @cohorts = Cohort.all.map{ |c| [c.id] }
+    @cohorts = Cohort.all.map{ |c| [c.name] }
   end
 
   def update
@@ -40,7 +40,8 @@ class StudentsController < ApplicationController
       last_name: params[:student][:last_name],
       age: params[:student][:age],
       education: params[:student][:education],
-      email: params[:student][:email]
+      email: params[:student][:email],
+
     )
     redirect_to student_path(student)
   end
@@ -57,7 +58,7 @@ class StudentsController < ApplicationController
   
   private
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :age, :education, :email)
+    params.require(:student).permit(:first_name, :last_name, :age, :education, :email,)
   end
   
 end

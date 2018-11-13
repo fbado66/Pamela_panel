@@ -51,8 +51,8 @@ end
 
   def new
     @cohorts_student = CohortsStudent.new
-    @cohort = Cohort.all.map{ |c| [c.id] }
-    @student = Student.all.map{ |c| [c.id] }
+    @cohort = Cohort.all.map{ |c| [c.name, c.id] }
+    @student = Student.all.map{ |c| [c.last_name, c.id] }
   end
 
 end

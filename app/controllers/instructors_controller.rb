@@ -5,7 +5,7 @@ class InstructorsController < ApplicationController
 
   def new
     @instructor = Instructor.new
-    @cohorts = Cohort.all.map{ |c| [c.id] }
+    @cohorts = Cohort.all.map{ |c| [c.name] }
   end
 
   def create
@@ -30,7 +30,7 @@ class InstructorsController < ApplicationController
 
   def edit
     @instructor = Instructor.find(params[:id])
-    @cohorts = Cohort.all.map{ |c| [c.id] }
+    @cohorts = Cohort.all.map{ |c| [c.name] }
   end
 
   def update
