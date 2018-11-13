@@ -23,8 +23,6 @@
   <%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %> <br /><br/>
   <div><strong>Email:</strong></div>
    <%= form.text_field(:email) %><br /><br/>
-  <div><strong>Cohort:</strong></div> 
-  <%= form.select :cohort_id, options_for_select(@cohorts, @instructor.id) %><br /><br/>
 <%= form.submit class: "btn btn-success"%>
 <% end %>
 </div>
