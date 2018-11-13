@@ -1,43 +1,13 @@
 Rails.application.routes.draw do
 
 
-  get 'reminders/index'
-  get 'reminders/show'
-  get 'reminders/edit'
-  get 'reminders/delete'
-  get 'reminders/create'
-  get 'reminders/new'
-  get 'reminders/update'
-  get 'homes/index'
-  get 'homes/show'
-  get 'homes/edit'
-  get 'homes/delete'
-  get 'homes/create'
-  get 'homes/update'
   devise_for :admins
   # sets the landing page controller and route
 
 
 root to: 'homes#index'
  
-  get 'cohortinstructors/index'
-  get 'cohortinstructors/show'
-  get 'cohortinstructors/edit'
-  get 'cohortinstructors/delete'
-  get 'cohortinstructors/create'
-  get 'cohortinstructors/update'
-  get 'coursecohorts/index'
-  get 'coursecohorts/show'
-  get 'coursecohorts/edit'
-  get 'coursecohorts/delete'
-  get 'coursecohorts/create'
-  get 'coursecohorts/update'
-  get 'cohorts_students/index'
-  get 'cohorts_students/show'
-  get 'cohorts_students/edit'
-  get 'cohorts_students/delete'
-  get 'cohorts_students/create'
-  get 'cohorts_students/update'
+
   resources :students
   resources :instructors
   resources :courses
