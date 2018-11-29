@@ -193,7 +193,7 @@
         <tbody>
          <tr>
           <% @cohorts.each do |cohort| %>
-          <th class="text-center"scope="row"><%= cohort.id %></th>
+          <th class="text-center"scope="row"><%= link_to cohort.id, cohort_path(cohort), :class => 'btn btn-default'  %></th>
           <td class="text-center"><%= cohort.name.capitalize %></td>
           <td class="text-center"><%= cohort.start_on %></td>
           <td class="text-center"><%= cohort.end_on %></td>
