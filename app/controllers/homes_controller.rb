@@ -4,7 +4,7 @@ class HomesController < ApplicationController
      if admin_signed_in?
       homes_path
      else
-      redirect_to homes_show_path
+      redirect_to homes_path
      end 
 
     #  student table 
