@@ -52,6 +52,30 @@
   background-size: cover;
 }
 
+
+#sessions-login {
+  background-image: image-url('home/wave3.jpg');
+  background-size: cover;
+  height: 680px;
+  margin-top: -71px;
+
+body, html {
+  height: 100%;
+}  
+
+
+.bg { 
+  background-image: url("home/image1.jpeg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+}
+
+
+
 #sessions-new {
     background-image: image-url('home/wave3.jpg');
     background-size: cover;
@@ -97,9 +121,7 @@
     text-align: center;
   
     }
-    // .link_1{
-    //   padding-right: 9px;
-    // }
+    
 
   .welcome{
     font-family: Arial, Helvetica, sans-serif;
