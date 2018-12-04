@@ -42,7 +42,7 @@ end
 
   def new
     @cohortinstructor = Cohortinstructor.new
-    @cohort = Cohort.all.map{ |c| [c.id] }
+    @cohort = Cohort.all.map{ |c| [c.name, c.id] }
     @instructor = Instructor.all.map{ |c| [c.last_name, c.id] }
   end
 

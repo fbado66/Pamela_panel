@@ -43,8 +43,8 @@
           <table class="table table-sm table-bordered table-light">
             <thead >
                <ul class="navbar-nav mr-auto">
-                  <td class="text-center" colspan="4"><h3>  66K ACADEMY REMINDERS TO WORK ON </td>
-                  <td class="icon"><%= link_to new_reminder_path, class: "btn btn-default" do %>
+                  <td class="text-right" colspan="5"><h3>  66K ACADEMY REMINDERS TO WORK ON &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <%= link_to new_reminder_path, class: "btn btn-default" do %>
                   <i class="glyphicon glyphicon-plus"></i></span>
                   <% end %>
                   </div>
@@ -87,8 +87,8 @@
           <table class="table table-sm table-bordered table-light">
             <thead >
                <ul class="navbar-nav mr-auto"> 
-                  <td colspan="2"><h3 class="text-center">STUDENTS </h3> </td>            
-                  <td class="text-center"><%= link_to new_student_path, class: "btn btn-default" do %>
+                  <td colspan="3"><h3 class="text-right">STUDENTS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        
+                  <%= link_to new_student_path, class: "btn btn-default" do %>
                   <i class="glyphicon glyphicon-plus"></i> 
                   <% end %>   
                 </ul>
@@ -193,7 +193,7 @@
         <tbody>
          <tr>
           <% @cohorts.each do |cohort| %>
-          <th class="text-center"scope="row"><%= link_to cohort.id, cohort_path(cohort), :class => 'btn btn-default'  %></th>
+          <th class="text-center"><%=cohort.id %></th>
           <td class="text-center"><%= cohort.name.capitalize %></td>
           <td class="text-center"><%= cohort.start_on %></td>
           <td class="text-center"><%= cohort.end_on %></td>
