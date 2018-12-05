@@ -93,8 +93,10 @@ ActiveRecord::Schema.define(version: 2018_10_14_194021) do
   create_table "reminders", force: :cascade do |t|
     t.string "name"
     t.string "content"
+    t.bigint "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_reminders_on_cohort_id"
   end
 
   create_table "students", force: :cascade do |t|
