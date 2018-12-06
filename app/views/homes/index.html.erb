@@ -43,7 +43,7 @@
           <table class="table table-sm table-bordered table-light">
             <thead >
                <ul class="navbar-nav mr-auto">
-                  <td class="text-right" colspan="6"><h3>  66K ACADEMY REMINDERS TO WORK ON &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <td class="text-right" colspan="5"><h3>  66K ACADEMY REMINDERS TO WORK ON &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                   <%= link_to new_reminder_path, class: "btn btn-default" do %>
                   <i class="glyphicon glyphicon-plus"></i></span>
                   <% end %>
@@ -51,7 +51,6 @@
                 </ul>
                 </td>
                        <tr>
-                         <th class="text-center" scope="col">Cohort</th>
                          <th class="text-center" scope="col">Class</th>
                          <th class="text-center" scope="col">Reminder</th>
                          <th class="text-center" scope="col">Created on</th>
@@ -62,7 +61,6 @@
                        <% @reminders.each do |reminder| %>
                        <tbody id="killer<%= reminder.id %>">
                           <tr>
-                            <th class="text-center"><%= Cohort.find(reminder.cohort_id).name %></td>
                             <th class="text-center"><%= reminder.name.capitalize %></td>
                             <td class="text-center"><%= reminder.content.capitalize %></td>
                             <td class="text-center"><%= reminder.created_at_formatted %></td>

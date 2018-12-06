@@ -6,7 +6,6 @@ class RemindersController < ApplicationController
 
   def new
     @reminder = Reminder.new
-    @cohort = Cohort.all.map{ |c| [c.name, c.id] }
     
   end
 
@@ -18,8 +17,7 @@ class RemindersController < ApplicationController
  def create
   reminder = Reminder.create(
      name: params[:reminder][:name],
-     content: params[:reminder][:content],
-     cohort_id: params[:reminder][:cohort_id]
+     content: params[:reminder][:content]
    )
    session[:reminder_id] = reminder.id
    redirect_to reminders_path
@@ -35,8 +33,7 @@ class RemindersController < ApplicationController
    reminder = Reminder.find(params[:id])
    reminder.update(
      name: params[:reminder][:name],
-     content: params[:reminder][:content],
-     cohort_id: params[:reminder][:cohort_id]
+     content: params[:reminder][:content]
    
    )
    redirect_to reminder_path(reminder)

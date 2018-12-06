@@ -11,9 +11,7 @@
    <div class="col-md-3"> 
     <div class="form-group">
 <%= form_with(model: @reminder) do |form| %>
-<div><strong>Cohort:</strong></div>
-      <%= form.select :cohort_id, options_for_select(@cohort, @reminder.cohort_id) %><br /><br/>
-  <strong>Class:</strong><%= form.select(:name, options_for_select([['Important'], ['Do-Now'], ['Weekly'], ['FYI']]), { include_blank: true }) %> <br /><br />
+  <strong>Class:</strong><%= form.text_field(:name) %> <br /><br />
   <strong>Reminder:</strong> <%= form.text_field(:content) %><br /><br/>
 <%= form.submit class: "btn btn-success"%>
 <% end %>
