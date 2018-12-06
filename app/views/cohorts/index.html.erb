@@ -21,9 +21,9 @@
              <th class="text-center" scope="col">Name:</th>
              <th class="text-center" scope="col">Start on:</th>
              <th class="text-center" scope="col">End on:</th>
-             <th class="text-center" scope="col">Instructor:</th>
-             <th class="text-center" scope="col">Course:</th>
-             <th class="text-center" scope="col">Student:</th>
+             <th class="text-center" scope="col">Instructor_id:</th>
+             <th class="text-center" scope="col">Course_id:</th>
+             <th class="text-center" scope="col">Student_id:</th>
              <th class="text-center" scope="col">Delete</th>
             </tr>
           </thead>
@@ -34,9 +34,9 @@
               <td><%= cohort.name.capitalize %></td>
               <td><%= cohort.start_on %></td>
               <td><%= cohort.end_on %></td>
-              <td><%= Instructor.find(cohort.instructor_id).first_name.capitalize %></td>
-              <td><%= Course.find(cohort.course_id).name.capitalize %></td>
-              <td><%= Student.find(cohort.student_id).last_name.capitalize%>, <%= Student.find(cohort.student_id).first_name.capitalize%></td>
+              <td><%= cohort.instructor_id %></td>
+              <td><%= cohort.course_id %></td>
+              <td><%= cohort.student_id%></td>
                 <td>  
                  <%= link_to(cohort_path(id: cohort.id), method: :delete, remote: true) do %>
                   <p class="text-center"><span class="glyphicon glyphicon-trash"></span></p>

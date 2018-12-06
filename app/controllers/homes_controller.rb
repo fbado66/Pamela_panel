@@ -8,7 +8,7 @@ class HomesController < ApplicationController
       # redirect_to homes_show_path
      end 
 
-    #  student table 
+    #  reminder table 
      @reminders = Reminder.all
 
     #  student table 
@@ -32,21 +32,5 @@ class HomesController < ApplicationController
     # cohort-instructors 
     @cohortinstructors = Cohortinstructor.all
 
-
     end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def delete
-  end
-
-  def create
-  end
-
-  def update
-  end
 end
