@@ -27,3 +27,9 @@
       border: 3px solid #73AD21;  
       padding: 8px;  
     }
+
+    #demo{
+      right: 33%;
+      top: 350px;
+      position: fixed;
+    }
