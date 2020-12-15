@@ -3,7 +3,7 @@
 This is a fun Client-side Oriented, Admin Panel to easily manage data regarding fictitious coures, cohorts, students, instructors, and reminders. <br>
 This application was build with Ruby on Rails.<br><br>
 
-<a href="https://murmuring-hamlet-99473.herokuapp.com/"><img src='/app/assets/images/wave2/png'></a>
+<a href="https://murmuring-hamlet-99473.herokuapp.com/"><img src='/app/assets/images/wave2.png'></a>
 
 <p>The user can login as an Admin and create records to the ficitious school,
 From students, instructors, cohorts, courses, reminders, and so on. <br>
