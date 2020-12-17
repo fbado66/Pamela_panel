@@ -10,6 +10,10 @@ From students, instructors, cohorts, courses, reminders, and so on. <br>
 The homepage gives an overview of all the possible things an admin can do, but to see in more details, the admin can use the navbar and go into each specific section. <br>
 There is CRUD all around this application.</p>
 
+## Demo
+<a href='https://youtu.be/-KmdzI8OZVQ'><img src='/youtube-logo.png'></a><br>
+
+
 ## Features
 Admin can log in and log out <br>
 Can create students, instructors, cohorts, courses, reminders <br>
